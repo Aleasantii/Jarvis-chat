@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+generated_tools/
+test_generated_tools/
+server.log
