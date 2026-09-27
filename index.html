@@ -3,29 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEXUS – Tu asistente</title>
+  <title>POOL-VIS – Deadpool JARVIS Tactical HUD</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <div class="chat-container">
-    <header class="chat-header">
-      <h1>NEXUS</h1>
-      <p class="subtitle">Tu asistente personal</p>
-    </header>
+  <div class="app-wrapper">
+    <!-- Sidebar / Tactical HUD Info Panel -->
+    <aside class="hud-panel">
+      <div class="hud-header">
+        <div class="deadpool-badge">
+          <i class="fa-solid fa-mask"></i>
+        </div>
+        <div class="hud-title">
+          <h2>POOL-VIS</h2>
+          <span class="hud-sub">TACTICAL AI ASSISTANT</span>
+        </div>
+      </div>
 
-    <div id="chat-box" class="chat-box">
-      <!-- Aquí irán los mensajes -->
-    </div>
+      <!-- Vital Health & Code Mutator Indicators -->
+      <div class="card health-card">
+        <h3><i class="fa-solid fa-heart-pulse"></i> Factor Regenerativo</h3>
+        <div class="progress-bar">
+          <div class="progress-fill health-fill" style="width: 100%;"></div>
+        </div>
+        <div class="stat-row">
+          <span>Estado del Núcleo:</span>
+          <span class="badge badge-success">SANO / 100%</span>
+        </div>
+        <div class="stat-row">
+          <span>Humor / Sarcasmo:</span>
+          <span class="badge badge-danger">MÁXIMO</span>
+        </div>
+      </div>
 
-    <div class="input-area">
-      <input
-        id="user-input"
-        type="text"
-        placeholder="Escribe tu mensaje..."
-        autocomplete="off"
-      />
-      <button id="send-btn">Enviar</button>
-    </div>
+      <div class="card mutator-card">
+        <h3><i class="fa-solid fa-dna"></i> Automejora de Código</h3>
+        <div class="stat-row">
+          <span>Mutador Dinámico:</span>
+          <span class="badge badge-warning">EN LÍNEA</span>
+        </div>
+        <div class="stat-row">
+          <span>Inyección en Caliente:</span>
+          <span class="badge badge-info">ACTIVADA</span>
+        </div>
+        <p class="card-desc">Si pides una función que no existe, POOL-VIS reescribe su propio código Python para ejecutarla.</p>
+      </div>
+
+      <!-- Quick Actions / Device Controls -->
+      <div class="card actions-card">
+        <h3><i class="fa-solid fa-terminal"></i> Acciones Rápidas</h3>
+        <div class="action-buttons">
+          <button class="quick-btn" data-cmd="Muestra el estado del sistema">
+            <i class="fa-solid fa-microchip"></i> Estado Sistema
+          </button>
+          <button class="quick-btn" data-cmd="Lista los procesos activos">
+            <i class="fa-solid fa-list-check"></i> Procesos OS
+          </button>
+          <button class="quick-btn" data-cmd="Ajusta el volumen al 85%">
+            <i class="fa-solid fa-volume-high"></i> Audio System
+          </button>
+          <button class="quick-btn" data-cmd="Automejora: Calcula la secuencia fibonacci">
+            <i class="fa-solid fa-code"></i> Probar Automejora
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Chat Window -->
+    <main class="chat-container">
+      <header class="chat-header">
+        <div class="header-status">
+          <span class="status-dot online"></span>
+          <h1>POOL-VIS <small>v3.0 Deadpool Edition</small></h1>
+        </div>
+        <div class="header-controls">
+          <button id="voice-toggle-btn" class="icon-btn" title="Activar/Desactivar Voz">
+            <i class="fa-solid fa-volume-xmark"></i>
+          </button>
+          <button id="clear-chat-btn" class="icon-btn" title="Limpiar Chat">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Mutator Code Patching Log Overlay / Panel -->
+      <div id="patch-log-banner" class="patch-log-banner hidden">
+        <i class="fa-solid fa-gear fa-spin"></i>
+        <span id="patch-log-text">Sintetizando nuevo módulo Python en caliente...</span>
+      </div>
+
+      <div id="chat-box" class="chat-box">
+        <!-- Messages rendered here -->
+      </div>
+
+      <div class="input-area">
+        <button id="mic-btn" class="mic-btn" title="Hablar con POOL-VIS">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <input
+          id="user-input"
+          type="text"
+          placeholder="Escribe un comando o pide una automejora a POOL-VIS..."
+          autocomplete="off"
+        />
+        <button id="send-btn" class="send-btn">
+          <span>Enviar</span> <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </main>
   </div>
 
   <script src="script.js"></script>
